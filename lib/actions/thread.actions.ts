@@ -12,10 +12,9 @@ export async function fetchPosts(pageNumber = 1, pageSize = 20) {
   connectToDB();
 
   // Count the total number of top-level posts (threads) i.e., threads that are not comments.
-  //  const totalPostsCount = await Thread.countDocuments({
-  //   parentId: { $in: [null, undefined] },
-  // }); // Get the total count of posts
-  const totalPostsCount = 10;
+   const totalPostsCount = await Thread.countDocuments({
+    parentId: { $in: [null, undefined] },
+  }); // Get the total count of posts
 
   // Calculate the number of posts to skip based on the page number and page size.
   const skipAmount = (pageNumber - 1) * pageSize;
