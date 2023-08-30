@@ -21,7 +21,7 @@ body,
 
   /* Activity */
   .activity-card {
-    @apply flex items-center gap-2 rounded-md bg-dark-2 px-7 py-4;
+    @apply flex items-center gap-2 rounded-md bg-[#94a3b8] px-7 py-4;
   }
 
   /* No Result */
@@ -31,7 +31,7 @@ body,
 
   /* Community Card */
   .community-card {
-    @apply w-full rounded-lg bg-dark-3 px-4 py-5 sm:w-96;
+    @apply w-full rounded-lg bg-[#94a3b8] px-4 py-5 sm:w-96;
   }
 
   .community-card_btn {
@@ -57,11 +57,11 @@ body,
   }
 
   .searchbar {
-    @apply flex gap-1 rounded-lg bg-dark-3 px-4 py-2;
+    @apply flex gap-1 rounded-lg bg-[#94a3b8] px-4 py-2;
   }
 
   .searchbar_input {
-    @apply border-none bg-dark-3 text-base-regular text-light-4 outline-none !important;
+    @apply border-none bg-[#94a3b8] text-base-regular text-light-4 outline-none !important;
   }
 
   .topbar {
