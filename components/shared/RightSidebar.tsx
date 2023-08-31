@@ -1,18 +1,19 @@
 /*
  * @Author: zrDeng
  * @Date: 2023-08-27 11:42:23
- * @LastEditTime: 2023-08-31 20:16:36
+ * @LastEditTime: 2023-08-31 22:22:42
  * @LastEditors: zrDeng
-//  * @Description:
+ * @Description: 
  * @FilePath: \项目\threads\components\shared\RightSidebar.tsx
  */
-
-import { fetchUsers } from "@/lib/actions/user.actions";
-import UserCard from "../cards/UserCard";
 import { currentUser } from "@clerk/nextjs";
-import { fetchCommunities } from "@/lib/actions/community.actions";
 
-export const RightSidebar =async  () => {
+import UserCard from "../cards/UserCard";
+
+import { fetchCommunities } from "@/lib/actions/community.actions";
+import { fetchUsers } from "@/lib/actions/user.actions";
+
+async function RightSidebar() {
   const user = await currentUser();
   if (!user) return null;
 
@@ -21,18 +22,19 @@ export const RightSidebar =async  () => {
     pageSize: 4,
   });
 
-  const suggestedCommunities = await fetchCommunities({ pageSize: 4 });
+  const suggestedCOmmunities = await fetchCommunities({ pageSize: 4 });
 
   return (
-    <section className="custom-scrollbar rightsidebar">
-      <div className="flex flex-1 flex-col justify-start ">
-        <h3 className="text-heading4-medium text-light-1">
+    <section className='custom-scrollbar rightsidebar'>
+      <div className='flex flex-1 flex-col justify-start'>
+        <h3 className='text-heading4-medium text-light-1'>
           Suggested Communities
         </h3>
+
         <div className='mt-7 flex w-[350px] flex-col gap-9'>
-           {suggestedCommunities.communities.length > 0 ? (
+          {suggestedCOmmunities.communities.length > 0 ? (
             <>
-              {suggestedCommunities.communities.map((community) => (
+              {suggestedCOmmunities.communities.map((community) => (
                 <UserCard
                   key={community.id}
                   id={community.id}
@@ -49,13 +51,12 @@ export const RightSidebar =async  () => {
             </p>
           )}
         </div>
-
-        
       </div>
-      <div className="flex flex-1 flex-col justify-start ">
-        <h3 className="text-heading4-medium text-light-1">Suggested Users</h3>
+
+      <div className='flex flex-1 flex-col justify-start'>
+        <h3 className='text-heading4-medium text-light-1'>Similar Minds</h3>
         <div className='mt-7 flex w-[350px] flex-col gap-10'>
-           {similarMinds.users.length > 0 ? (
+          {similarMinds.users.length > 0 ? (
             <>
               {similarMinds.users.map((person) => (
                 <UserCard
@@ -72,10 +73,9 @@ export const RightSidebar =async  () => {
             <p className='!text-base-regular text-light-3'>No users yet</p>
           )}
         </div>
-
       </div>
     </section>
   );
-};
+}
 
-
+export default RightSidebar;

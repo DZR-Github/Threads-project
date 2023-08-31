@@ -1,10 +1,10 @@
 /*
  * @Author: zrDeng
  * @Date: 2023-08-27 09:31:27
- * @LastEditTime: 2023-08-27 20:48:41
+ * @LastEditTime: 2023-08-31 22:21:58
  * @LastEditors: zrDeng
  * @Description: 
- * @FilePath: \threads\app\(root)\layout.tsx
+ * @FilePath: \项目\threads\app\(root)\layout.tsx
  */
 import "../globals.css";
 import type { Metadata } from "next";

@@ -29,7 +29,7 @@ function ProfileHeader({
   type,
 }: Props) {
   return (
-    <div className='flex w-full flex-col justify-start bg-gray-400 p-4 rounded'>
+    <div className='flex w-full flex-col justify-start bg-[#8A9BA8] p-4 rounded'>
       <div className='flex items-center justify-between'>
         <div className='flex items-center gap-3'>
           <div className='relative h-20 w-20 object-cover'>
